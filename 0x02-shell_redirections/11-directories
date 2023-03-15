@@ -1,2 +1,2 @@
 #!/bin/bash
-find. -mindepth 1 -type d | wc -l
+find . -type d -not -path '*/\.*' -not -path '.' -not -path './../*' -print0 | tr -dc '\0' | wc -c
